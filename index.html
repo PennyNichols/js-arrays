@@ -38,5 +38,39 @@
 
     var lastelem=cars[cars.length - 1]
     console.log(lastelem[lastelem.length - 1][1])
+    console.log(typeof myItems[0])
+    var salary=[132, 456, 65432, 123, 102]
+    var total=0
+    for (let i=0; salary.length>i; i++){
+        console.log(salary[i])
+        total+=salary[i]
+        console.log(total)
+    }
+
+    // write a function that accepts an array and returns average of numbers in array
+
+    function avg(x) {
+        total=0
+        for (let i=0; x.length>i; i++){
+        total+=x[i]
+        console.log(total/(x.length))
+        }
+    }
+
+    avg([10,20,30,40])
+
+
+    function avgEven(x) {
+        total = 0
+        count = 0
+        for (let i = 0; i < x.length; i++) {
+            if (x[i] % 2 === 0) {
+                total += x[i]
+                count += 1
+            }
+        console.log(total/count)
+        }
+    }
+
 </script>
 </html>
