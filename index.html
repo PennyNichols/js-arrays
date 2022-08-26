@@ -1,88 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Arrays</title>
-</head>
-<body>
-    <h1>Arrays</h1>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Arrays</title>
+	</head>
+	<body>
+		<h1>Arrays</h1>
+	</body>
+	<script>
+		// Primitive : string, number, boolean, undefined, => immutable
+		// Non-primitive : Attays, Objects, => mutable
+		// Arrays : are used to store multiple data types, several items under single variable
+		// mutable:
+		// ordered (indexed)
+
+		name = "false, 45, jack";
+		console.log(typeof name);
+		var fruits = ["kiwi", "banana", "pineapple", "peas"];
+		console.log(typeof fuits);
+		console.log(Array.isArray(fruits));
+		console.log(fruits[0]);
+		console.log(fruits[0][2]);
+		console.log(fruits[1]);
+		console.log(fruits[2]);
+		console.log(fruits[3]);
+
+		var myItems = [
+			123,
+			"fiat",
+			"dodge",
+			false,
+			45.5,
+			undefined,
+			[10, 20, 30, "hello"],
+		];
+		console.log(myItems.length);
+		console.log(myItems[myItems.length - 1]);
+		console.log(myItems[myItems.length - 1][2]);
+
+		var cars = [
+			["toyota", ["honda", ["fiat", 200]]],
+			["mercedes", [500, 900]],
+		];
+		console.log(cars[1][1][0]);
+
+		var lastelem = cars[cars.length - 1];
+		console.log(lastelem[lastelem.length - 1][1]);
+		console.log(typeof myItems[0]);
+		var salary = [132, 456, 65432, 123, 102];
+		var total = 0;
+		for (let i = 0; salary.length > i; i++) {
+			console.log(salary[i]);
+			total += salary[i];
+			console.log(total);
+		}
+
+		// write a function that accepts an array and returns average of numbers in array
+
+		function avg(x) {
+			total = 0;
+			for (let i = 0; x.length > i; i++) {
+				total += x[i];
+				console.log(total / x.length);
+			}
+		}
+
+		avg([10, 20, 30, 40]);
+
+		function avgEven(x) {
+			total = 0;
+			count = 0;
+			for (let i = 0; i < x.length; i++) {
+				if (x[i] % 2 === 0) {
+					total += x[i];
+					count += 1;
+				}
+				console.log(total / count);
+			}
+		}
+
+		//searching algorithm
+
+		function search(arr, target) {
+			for (let i = 0; i < arr.length; i++) {
+				if (arr[i] === target) {
+					return true;
+				}
+			}
+			return false;
+		}
+		console.log(search([10, 188, 5000, 600, 20, 30, 40, 50, 60, 88], 20));
+	
+        
     
-</body>
-<script>
-    // Primitive : string, number, boolean, undefined, => immutable
-    // Non-primitive : Attays, Objects, => mutable
-    // Arrays : are used to store multiple data types, several items under single variable
-    // mutable:
-    // ordered (indexed)
-
-    name="false, 45, jack"
-    console.log(typeof name)
-    var fruits=["kiwi", "banana", "pineapple", 'peas']
-    console.log(typeof fuits)
-    console.log(Array.isArray(fruits))
-    console.log(fruits[0])
-    console.log(fruits[0][2])
-    console.log(fruits[1])
-    console.log(fruits[2])
-    console.log(fruits[3])
-
-    var myItems=[123, "fiat", "dodge", false, 45.5, undefined, [10,20,30,"hello"]]
-    console.log(myItems.length)
-    console.log(myItems[myItems.length - 1])
-    console.log(myItems[myItems.length - 1][2])
-
-    var cars=[["toyota", ["honda", ['fiat', 200]]], ["mercedes",[500,900]]]
-    console.log(cars[1][1][0])
-
-    var lastelem=cars[cars.length - 1]
-    console.log(lastelem[lastelem.length - 1][1])
-    console.log(typeof myItems[0])
-    var salary=[132, 456, 65432, 123, 102]
-    var total=0
-    for (let i=0; salary.length>i; i++){
-        console.log(salary[i])
-        total+=salary[i]
-        console.log(total)
-    }
-
-    // write a function that accepts an array and returns average of numbers in array
-
-    function avg(x) {
-        total=0
-        for (let i=0; x.length>i; i++){
-        total+=x[i]
-        console.log(total/(x.length))
-        }
-    }
-
-    avg([10,20,30,40])
-
-
-    function avgEven(x) {
-        total = 0
-        count = 0
-        for (let i = 0; i < x.length; i++) {
-            if (x[i] % 2 === 0) {
-                total += x[i]
-                count += 1
-            }
-        console.log(total/count)
-        }
-    }
-
-
-    //searching algorithm
-
-    function search(arr, target) {
-        for (let i = 0; i < arr.length; i++) {
-            if(arr[i] === target) {
-                return true
-            }
-        }
-        return false
-    }
-    console.log(search([10, 188, 5000, 600, 20, 30, 40, 50, 60, 88], 20))
-</script>
+    
+    
+    
+    
+    </script>
 </html>
